@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:raghavgarg_navigus/login/signup.dart';
+import 'package:raghavgarg_navigus/student/student_dashboard.dart';
+import 'package:raghavgarg_navigus/student/student_mcq.dart';
+import 'package:raghavgarg_navigus/student/student_quiz.dart';
 import 'package:raghavgarg_navigus/teacher.dart/addMCQ.dart';
 import 'package:raghavgarg_navigus/teacher.dart/mcq.dart';
 import 'design/colors.dart';
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: primary),
           primaryColor: primary,
           accentColor: primary),
-      home: TeacherDashboard(),
+      home: Login(),
     );
   }
 }

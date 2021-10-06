@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:raghavgarg_navigus/design/colors.dart';
 import 'package:get/get.dart';
