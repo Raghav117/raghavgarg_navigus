@@ -75,6 +75,21 @@ class _AddMCQState extends State<AddMCQ> {
                     ),
                   ),
                   SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      Text("For Correct Answer you have to press this  --->"),
+                      Container(
+                          width: 30,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.grey,
+                          )),
+                    ],
+                  ),
+                  SizedBox(
                     height: 30,
                   ),
                   Wrap(

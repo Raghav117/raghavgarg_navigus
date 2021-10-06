@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:raghavgarg_navigus/design/colors.dart';
 import 'package:get/get.dart';
+import 'package:raghavgarg_navigus/student/student_dashboard.dart';
+import 'package:raghavgarg_navigus/teacher.dart/teacher_dashboard.dart';
 
 class Signup extends StatefulWidget {
   const Signup({Key? key}) : super(key: key);
@@ -26,6 +28,12 @@ class _SignupState extends State<Signup> {
                 name.text.length == 0) {
               Get.snackbar("All Fields Are Compulsory", "",
                   snackPosition: SnackPosition.BOTTOM);
+            } else {
+              if (role == 1) {
+                Get.to(() => TeacherDashboard());
+              } else {
+                Get.to(() => StudentDashboard());
+              }
             }
           },
           child: Icon(

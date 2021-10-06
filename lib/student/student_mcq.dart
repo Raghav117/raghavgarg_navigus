@@ -279,7 +279,7 @@ class _StudentMCQState extends State<StudentMCQ> {
               children: [
                 Expanded(
                     child: Text(
-                  "Total Score : ",
+                  "Total MArks : ",
                   style: TextStyle(color: primary, fontWeight: FontWeight.bold),
                 )),
                 Expanded(
