@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/example/raghavgarg_navigus/BuildConfig.java
- com.example.raghavgarg_navigus.BuildConfig
