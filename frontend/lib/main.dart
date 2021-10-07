@@ -30,22 +30,22 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    getData();
+    // getData();
     super.initState();
   }
 
-  getData() async {
-    await FirebaseFirestore.instance
-        .collection("teachers")
-        .doc("asfda")
-        .set({"Data": "asdfas"}).whenComplete(() async {
-      print("yeah");
-      await FirebaseFirestore.instance
-          .collection("teachers")
-          .get()
-          .then((value) => print(value.docs));
-    });
-  }
+  // getData() async {
+  //   await FirebaseFirestore.instance
+  //       .collection("teachers")
+  //       .doc("asfda")
+  //       .set({"Data": "asdfas"}).whenComplete(() async {
+  //     print("yeah");
+  //     await FirebaseFirestore.instance
+  //         .collection("teachers")
+  //         .get()
+  //         .then((value) => print(value.docs));
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

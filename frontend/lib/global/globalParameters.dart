@@ -10,3 +10,5 @@ List courses = [
     ],
   },
 ];
+
+Map<String, dynamic> scores = Map();

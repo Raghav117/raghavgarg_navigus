@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:raghavgarg_navigus/design/colors.dart';
+import 'package:raghavgarg_navigus/global.dart';
 import 'package:raghavgarg_navigus/global/globalParameters.dart';
 import 'package:raghavgarg_navigus/teacher.dart/mcq.dart';
 
@@ -37,7 +38,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                   style: TextStyle(fontSize: 25),
                 ),
                 Text(
-                  "Raghav Garg",
+                  userData["name"].toString(),
                   style: TextStyle(
                       color: primary,
                       fontSize: 25,
@@ -80,7 +81,9 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
                           padding: const EdgeInsets.all(8.0),
                           child: InkWell(
                             onTap: () {
-                              Get.to(() => MCQ());
+                              Get.to(() => MCQ(
+                                    subject: e.toString(),
+                                  ));
                             },
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.5,

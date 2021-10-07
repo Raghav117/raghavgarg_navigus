@@ -77,7 +77,9 @@ class _StudentQuizState extends State<StudentQuiz> {
                           padding: const EdgeInsets.all(8.0),
                           child: InkWell(
                             onTap: () {
-                              Get.to(() => StudentMCQ());
+                              Get.to(() => StudentMCQ(
+                                    subject: e,
+                                  ));
                             },
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.5,

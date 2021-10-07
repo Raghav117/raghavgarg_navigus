@@ -11,10 +11,6 @@ class StudentReport extends StatefulWidget {
 }
 
 class _StudentReportState extends State<StudentReport> {
-  int totalScore = 0;
-  int attemp = 0;
-  double score = 0;
-  int totalQuestions = 0;
   dialog(String name) {
     // Navigator.pop(context);
     // totalScore += int.parse(questions[page]["level"]);
@@ -31,7 +27,9 @@ class _StudentReportState extends State<StudentReport> {
                 )),
                 Expanded(
                     child: Text(
-                  totalQuestions.toString(),
+                  scores[name.toLowerCase()] == null
+                      ? 0.toString()
+                      : scores[name.toLowerCase()]["totalQuestions"].toString(),
                   style: TextStyle(color: primary, fontWeight: FontWeight.bold),
                 )),
               ],
@@ -45,7 +43,10 @@ class _StudentReportState extends State<StudentReport> {
                 )),
                 Expanded(
                     child: Text(
-                  attemp.toString(),
+                  scores[name.toLowerCase()] == null
+                      ? 0.toString()
+                      : scores[name.toLowerCase()]["totalAttemptQuestions"]
+                          .toString(),
                   style: TextStyle(color: primary, fontWeight: FontWeight.bold),
                 )),
               ],
@@ -59,7 +60,9 @@ class _StudentReportState extends State<StudentReport> {
                 )),
                 Expanded(
                     child: Text(
-                  (totalScore * 10).toString(),
+                  scores[name.toLowerCase()] == null
+                      ? 0.toString()
+                      : scores[name.toLowerCase()]["totalMarks"].toString(),
                   style: TextStyle(color: primary, fontWeight: FontWeight.bold),
                 )),
               ],
@@ -73,7 +76,10 @@ class _StudentReportState extends State<StudentReport> {
                 )),
                 Expanded(
                     child: Text(
-                  (score * 10).toString(),
+                  scores[name.toLowerCase()] == null
+                      ? 0.toString()
+                      : scores[name.toLowerCase()]["totalMarksObtained"]
+                          .toString(),
                   style: TextStyle(color: primary, fontWeight: FontWeight.bold),
                 )),
               ],
