@@ -40,7 +40,7 @@ class _StudentMCQState extends State<StudentMCQ> {
         } else {
           calculateScore();
           pageController.animateToPage(page + 1,
-              duration: Duration(seconds: 1), curve: Curves.linear);
+              duration: Duration(milliseconds: 100), curve: Curves.linear);
           time = 30;
         }
       }
@@ -63,7 +63,6 @@ class _StudentMCQState extends State<StudentMCQ> {
       value.docs.forEach((element) {
         questions.add(element.data());
       });
-      print(questions);
 
       setState(() {
         loading = false;
@@ -145,7 +144,6 @@ class _StudentMCQState extends State<StudentMCQ> {
       "totalMarksObtained": totalMarksObtained1,
       "totalQuestions": totalQuestions1
     };
-    print(scores[name]);
     setState(() {
       loading = true;
     });
@@ -163,7 +161,6 @@ class _StudentMCQState extends State<StudentMCQ> {
         v.update(scores);
       }
     }).whenComplete(() {
-      print("yeah");
       setState(() {
         loading = false;
       });
@@ -247,7 +244,6 @@ class _StudentMCQState extends State<StudentMCQ> {
   PageController pageController = PageController();
   @override
   Widget build(BuildContext context) {
-    print(time);
     return Scaffold(
       body: loading == true
           ? Center(child: CircularProgressIndicator())
@@ -334,7 +330,6 @@ class _StudentMCQState extends State<StudentMCQ> {
                       itemCount: 10,
                       onPageChanged: (index) {
                         time = 30;
-                        print("yah");
                         totalScore +=
                             int.parse(questions[page - 1]["level"].toString());
                         setState(() {});
@@ -435,7 +430,7 @@ class _StudentMCQState extends State<StudentMCQ> {
                       if (page != 9) {
                         calculateScore();
                         pageController.animateToPage(page + 1,
-                            duration: Duration(seconds: 1),
+                            duration: Duration(milliseconds: 100),
                             curve: Curves.linear);
                         time = 30;
                         setState(() {});

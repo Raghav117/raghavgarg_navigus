@@ -37,8 +37,6 @@ class _MCQState extends State<MCQ> {
       elementid.clear();
       show.clear();
       value.docs.forEach((element) {
-        print(element.data());
-        print(element.id);
         elementid.add(element.id.toString());
         questions.add(element.data());
         show.add(false);
@@ -130,7 +128,6 @@ class _MCQState extends State<MCQ> {
                                         setState(() {
                                           loading = true;
                                         });
-                                        print(elementid[index]);
                                         await FirebaseFirestore.instance
                                             .collection(
                                                 widget.subject.toLowerCase())

@@ -40,7 +40,6 @@ class _StudentDashboardState extends State<StudentDashboard> {
       if (value.data() != null) {
         scores = value.data()!;
       } else {}
-      print(scores);
     }).catchError((onError) {
       setState(() {
         loading = false;
