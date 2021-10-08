@@ -57,7 +57,7 @@ class _StudentMCQState extends State<StudentMCQ> {
 
     FirebaseFirestore.instance
         .collection(widget.subject.toLowerCase())
-        .limit(20)
+        
         .get()
         .then((value) {
       value.docs.forEach((element) {
