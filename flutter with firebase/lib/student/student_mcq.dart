@@ -57,11 +57,12 @@ class _StudentMCQState extends State<StudentMCQ> {
 
     FirebaseFirestore.instance
         .collection(widget.subject.toLowerCase())
-        .limit(10)
+        .limit(20)
         .get()
         .then((value) {
       value.docs.forEach((element) {
         questions.add(element.data());
+        questions.shuffle();
       });
 
       setState(() {
@@ -352,25 +353,26 @@ class _StudentMCQState extends State<StudentMCQ> {
                                       color: primary,
                                       borderRadius: BorderRadius.circular(15)),
                                   child: Center(
-                                    child: Row(
-                                      children: [
-                                        Text(
-                                          "Q: ${index + 1}",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
-                                              color: Colors.white),
-                                        ),
-                                        Spacer(),
-                                        Text(
-                                          questions[index]["question"],
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
-                                              color: Colors.white),
-                                        ),
-                                        Spacer(),
-                                      ],
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            "Q: ${index + 1}         ",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20,
+                                                color: Colors.white),
+                                          ),
+                                          Text(
+                                            questions[index]["question"],
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20,
+                                                color: Colors.white),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -401,14 +403,16 @@ class _StudentMCQState extends State<StudentMCQ> {
                                                 : Colors.transparent,
                                             border: Border.all(color: primary)),
                                         child: Center(
-                                          child: Text(
-                                            e.toString(),
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18,
-                                              color: ans[i] == true
-                                                  ? Colors.white
-                                                  : primary,
+                                          child: Flexible(
+                                            child: Text(
+                                              e.toString(),
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18,
+                                                color: ans[i] == true
+                                                    ? Colors.white
+                                                    : primary,
+                                              ),
                                             ),
                                           ),
                                         ),
