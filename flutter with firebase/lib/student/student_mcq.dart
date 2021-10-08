@@ -403,16 +403,14 @@ class _StudentMCQState extends State<StudentMCQ> {
                                                 : Colors.transparent,
                                             border: Border.all(color: primary)),
                                         child: Center(
-                                          child: Flexible(
-                                            child: Text(
-                                              e.toString(),
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18,
-                                                color: ans[i] == true
-                                                    ? Colors.white
-                                                    : primary,
-                                              ),
+                                          child: Text(
+                                            e.toString(),
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18,
+                                              color: ans[i] == true
+                                                  ? Colors.white
+                                                  : primary,
                                             ),
                                           ),
                                         ),
